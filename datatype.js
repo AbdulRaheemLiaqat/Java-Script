@@ -1,0 +1,12 @@
+let country = 'pakistan';
+let continent = "asia";
+let population = '240 M' ;
+console.log(country);
+console.log(continent);
+console.log(population);
+let island = false ;
+let language;
+console.log(typeof island);
+console.log(typeof population);
+console.log(typeof country);
+console.log(typeof language);

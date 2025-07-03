@@ -1,0 +1,12 @@
+const country = 'pakistan';
+const continent = "asia";
+let population = '240 M' ;
+console.log(country);
+console.log(continent);
+console.log(population);
+var island = false ;
+const language =urdu ;
+console.log(typeof island);
+console.log(typeof population);
+console.log(typeof country);
+console.log(typeof language);
