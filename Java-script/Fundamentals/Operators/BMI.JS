@@ -1,0 +1,10 @@
+let markWeight = 78;
+let markHeight = 1.69;
+let johnWeight = 92;
+let johnHeight = 1.95;
+let markBMI = markWeight / (markHeight ** 2);
+let johnBMI = johnWeight / (johnHeight ** 2);
+let markHigherBMI = markBMI > johnBMI;
+console.log("Mark BMI:", markBMI.toFixed(2));
+console.log("John BMI:", johnBMI.toFixed(2));
+console.log("Is Mark's BMI higher?", markHigherBMI);
