@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Race To 100</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #14012c;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+
+    }
+    .game {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #63ccf2;
+      border-radius: 10px;
+      padding: 30px;
+      
+      box-shadow: 0 4px 10px rgba(255, 254, 254, 0.866);
+      max-width: 400px;
+    }
+    .scores {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .player {
+      text-align: center;
+      width: 45%;
+    }
+    .active {
+      font-weight: bold;
+      color: green;
+    }
+    .dice {
+      width: 80px;
+      margin: 20px;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 15px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      opacity: 0.9;
+    }
+    .roll { background-color: #4caf50; color: rgb(248, 244, 244); }
+    .hold { background-color: #2196f3; color: white; }
+    .new { background-color: #f44336; color: white; }
+  </style>
+</head>
+<body>
+
+<div class="game">
+  <h1>Race to 100 Game 🎲</h1>
+  <div class="scores">
+    <div class="player" id="player--0">
+      <p class="active">Player 1</p>
+      <p>Total: <span id="score--0">0</span></p>
+      <p>Current: <span id="current--0">0</span></p>
+    </div>
+    <div class="player" id="player--1">
+      <p>Player 2</p>
+      <p>Total: <span id="score--1">0</span></p>
+      <p>Current: <span id="current--1">0</span></p>
+    </div>
+  </div>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Dice-1-b.svg" alt="Dice" class="dice" id="dice" />
+  <div>
+    <button class="roll">🎲 Roll</button>
+    <button class="hold">📥 Hold</button>
+    <button class="new">🔄 New Game</button>
+  </div>
+</div>
+  <script src="raceTo100.js"></script>
+  <footer style="position: absolute; bottom: 20px; text-align: center; width: 100%; font-size: 14px; opacity: 0.6; color :azure">
+    Created by Abdul Raheem Liaqat
+  </footer>
+</body>
+</body>
+</html>
