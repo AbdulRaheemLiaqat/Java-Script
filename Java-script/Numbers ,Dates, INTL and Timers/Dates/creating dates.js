@@ -1,0 +1,10 @@
+const now = new Date();
+console.log(now);  
+console.log(new Date('Aug 17 2025'));
+console.log(new Date(2025, 7, 17, 21, 15, 30)); 
+console.log(new Date(0));       
+console.log(new Date(1000*60*60*24*3)); 
+console.log(now.getFullYear());
+console.log(now.getMonth());   
+console.log(now.getDate());      
+console.log(now.getDay());      
