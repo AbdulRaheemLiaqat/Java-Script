@@ -1,0 +1,19 @@
+<div id="parent" style="padding:20px; background:lightblue;">
+  Parent
+  <button id="child">Child</button>
+</div>
+
+<script>
+  document.getElementById("parent").addEventListener("click", () => {
+    alert("Parent clicked!");
+  }, false); // Bubbling (default)
+
+  document.getElementById("child").addEventListener("click", () => {
+    alert("Child clicked!");
+  }, false);
+
+  // Capturing example
+  document.getElementById("parent").addEventListener("click", () => {
+    console.log("Parent captured first!");
+  }, true); // Capturing
+</script>
