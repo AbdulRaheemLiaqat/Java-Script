@@ -1,0 +1,19 @@
+<div class="tabs">
+  <button class="tab" data-tab="1">Tab 1</button>
+  <button class="tab" data-tab="2">Tab 2</button>
+</div>
+
+<div class="content" id="tab-1">This is Tab 1 Content</div>
+<div class="content" id="tab-2" style="display:none;">This is Tab 2 Content</div>
+
+<script>
+  const tabs = document.querySelectorAll(".tab");
+  const contents = document.querySelectorAll(".content");
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      contents.forEach(c => c.style.display = "none");
+      document.getElementById(`tab-${tab.dataset.tab}`).style.display = "block";
+    });
+  });
+                         </script>
