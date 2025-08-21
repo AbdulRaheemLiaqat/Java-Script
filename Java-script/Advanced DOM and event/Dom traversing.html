@@ -1,0 +1,12 @@
+<div id="container">
+  <h1>Title</h1>
+  <p class="desc">Paragraph</p>
+</div>
+
+<script>
+  const container = document.getElementById("container");
+  console.log(container.firstElementChild); // <h1>
+  console.log(container.lastElementChild);  // <p>
+  console.log(container.parentElement);     // body
+  console.log(container.childNodes);        // NodeList of children
+</script>
