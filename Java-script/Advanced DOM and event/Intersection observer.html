@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .box {
+      height: 200px; margin:50px; background:lightgray;
+      opacity:0; transition: opacity 1s;
+    }
+    .show { opacity:1; }
+  </style>
+</head>
+<body>
+  <div class="box">Box 1</div>
+  <div class="box">Box 2</div>
+  <div class="box">Box 3</div>
+  <script>
+    const boxes = document.querySelectorAll('.box');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+        }
+      });
+    });
+    boxes.forEach(box => observer.observe(box));
+  </script>
+</body>
+</html>
