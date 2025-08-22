@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    img { width:100%; max-width:400px; display:block; margin:20px auto; }
+  </style>
+</head>
+<body>
+  <h2>Scroll to load images</h2>
+  <img data-src="https://via.placeholder.com/400x200?text=Image+1" alt="lazy" />
+  <img data-src="https://via.placeholder.com/400x200?text=Image+2" alt="lazy" />
+  <img data-src="https://via.placeholder.com/400x200?text=Image+3" alt="lazy" />
+
+  <script>
+    const imgs = document.querySelectorAll('img');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          const img = entry.target;
+          img.src = img.dataset.src;
+          observer.unobserve(img);
+        }
+      });
+    });
+    imgs.forEach(img => observer.observe(img));
+  </script>
+</body>
+</html>
