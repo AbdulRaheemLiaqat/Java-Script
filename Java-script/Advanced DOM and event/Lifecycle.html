@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lifecycle DOM Events</title>
+</head>
+<body>
+  <h1>Lifecycle Events Example</h1>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      console.log("DOM fully loaded and parsed");
+      document.body.style.background = "lightyellow";
+    });
+
+    window.addEventListener("load", () => {
+      console.log("Page fully loaded (including images & styles)");
+    });
+
+    window.addEventListener("beforeunload", (e) => {
+      e.preventDefault();
+      e.returnValue = ""; // shows confirmation dialog
+    });
+  </script>
+</body>
+</html>
