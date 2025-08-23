@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Efficient Script Loading</title>
+  <!-- Normal script blocks parsing -->
+  <script>
+    console.log("Normal script runs immediately, blocking HTML parsing.");
+  </script>
+
+  <!-- Defer script runs AFTER HTML is parsed -->
+  <script defer>
+    console.log("Defer script runs after HTML parsing, before DOMContentLoaded.");
+  </script>
+
+  <!-- Async script runs independently (order not guaranteed) -->
+  <script async>
+    console.log("Async script runs as soon as it loads, may break order.");
+  </script>
+</head>
+<body>
+  <h1>Check the Console for Script Loading Order</h1>
+</body>
+</html>
