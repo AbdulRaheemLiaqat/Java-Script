@@ -11,6 +11,6 @@ class BankAccount {
     return this._balance
   }
 }
-const acc = new BankAccount("Sara", 1000)
+const acc = new BankAccount("Maheen", 1000)
 acc.deposit(500)
 console.log(acc.getBalance())
