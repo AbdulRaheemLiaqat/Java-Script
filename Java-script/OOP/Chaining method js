@@ -1,0 +1,17 @@
+class Car {
+  constructor(make) {
+    this.make = make
+    this.speed = 0
+  }
+  accelerate() {
+    this.speed += 10
+    return this
+  }
+  brake() {
+    this.speed -= 5
+    return this
+  }
+}
+const car = new Car("BMW")
+car.accelerate().accelerate().brake()
+console.log(car.speed)
