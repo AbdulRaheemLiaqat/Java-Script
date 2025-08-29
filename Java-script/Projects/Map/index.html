@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ArCH Map</title>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+  <style>
+    :root { --bg:#0f172a; --card:#111827; --text:#e5e7eb; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial;
+      background: var(--bg); color: var(--text);
+    }
+    header {
+      padding: 1rem 1.25rem; border-bottom: 1px solid #1f2937;
+      display: flex; align-items: center; gap: .75rem;
+    }
+    header h1 { margin: 0; font-size: 1.25rem; letter-spacing: .5px; }
+    main { height: calc(100vh - 64px); }
+    #map {
+      height: 100%; width: 100%;
+    }
+    .hint {
+      position: absolute; z-index: 1000; right: 1rem; top: 4.25rem;
+      background: var(--card); border: 1px solid #1f2937; border-radius: 14px;
+      padding: .6rem .8rem; font-size: .9rem; opacity: .9;
+    }
+    a { color: #93c5fd; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12 2 2 7l10 5 10-5-10-5Zm0 7L2 4v13l10 5 10-5V4l-10 5Z"/>
+    </svg>
+    <h1>ArCH Map</h1>
+  </header>
+  <main>
+    <div id="map" role="region" aria-label="ArCH Map interactive map"></div>
+    <div class="hint">Tip: click the map to drop a marker.</div>
+  </main>
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+  <script src="map.js"></script>
+</body>
+</html>
