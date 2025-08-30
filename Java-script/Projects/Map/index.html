@@ -7,49 +7,84 @@
   <link
     rel="stylesheet"
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
     crossorigin=""
   />
   <style>
-    :root { --bg:#0f172a; --card:#111827; --text:#e5e7eb; }
-    * { box-sizing: border-box; }
     body {
-      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial;
-      background: var(--bg); color: var(--text);
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: #0f172a;
+      color: #f1f5f9;
     }
     header {
-      padding: 1rem 1.25rem; border-bottom: 1px solid #1f2937;
-      display: flex; align-items: center; gap: .75rem;
+      padding: 1rem;
+      background: #111827;
+      border-bottom: 1px solid #1f2937;
     }
-    header h1 { margin: 0; font-size: 1.25rem; letter-spacing: .5px; }
-    main { height: calc(100vh - 64px); }
+    header h1 {
+      margin: 0;
+      font-size: 1.25rem;
+    }
     #map {
-      height: 100%; width: 100%;
+      height: 80vh;
+      width: 100%;
     }
-    .hint {
-      position: absolute; z-index: 1000; right: 1rem; top: 4.25rem;
-      background: var(--card); border: 1px solid #1f2937; border-radius: 14px;
-      padding: .6rem .8rem; font-size: .9rem; opacity: .9;
+    .form {
+      display: none;
+      margin: 1rem;
+      padding: 1rem;
+      background: #1e293b;
+      border-radius: 8px;
     }
-    a { color: #93c5fd; text-decoration: none; }
+    .form input, .form select {
+      margin: 0.5rem;
+      padding: 0.5rem;
+      border-radius: 4px;
+      border: none;
+    }
+    .form__row {
+      display: flex;
+      align-items: center;
+    }
   </style>
 </head>
 <body>
   <header>
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M12 2 2 7l10 5 10-5-10-5Zm0 7L2 4v13l10 5 10-5V4l-10 5Z"/>
-    </svg>
-    <h1>ArCH Map</h1>
+    <h1>ArCH Map — Workout Logger</h1>
   </header>
   <main>
-    <div id="map" role="region" aria-label="ArCH Map interactive map"></div>
-    <div class="hint">Tip: click the map to drop a marker.</div>
+    <div id="map"></div>
+    <form class="form">
+      <div class="form__row">
+        <label>Type:</label>
+        <select class="form__input form__input--type">
+          <option value="running">Running</option>
+          <option value="cycling">Cycling</option>
+        </select>
+      </div>
+      <div class="form__row">
+        <label>Distance (km):</label>
+        <input class="form__input form__input--distance" type="number" required />
+      </div>
+      <div class="form__row">
+        <label>Duration (min):</label>
+        <input class="form__input form__input--duration" type="number" required />
+      </div>
+      <div class="form__row form__row--cadence">
+        <label>Cadence (spm):</label>
+        <input class="form__input form__input--cadence" type="number" />
+      </div>
+      <div class="form__row form__row--elevation" style="display:none;">
+        <label>Elevation (m):</label>
+        <input class="form__input form__input--elevation" type="number" />
+      </div>
+      <button type="submit">OK</button>
+    </form>
   </main>
   <script
     src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""
   ></script>
-  <script src="map.js"></script>
+  <script src="./script.js"></script>
 </body>
 </html>
